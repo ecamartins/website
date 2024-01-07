@@ -14,7 +14,8 @@ const projectInfo: ProjectCardProps[] = [
         chipLabels: ["React", "TypeScript", "Supabase", "SQL"],
         projectLink: "https://physical-activity-tracker.vercel.app/",
         sourceCodeLink: "https://github.com/ecamartins/physical-activity-tracker",
-        dialogDescription: "This is a full stack project with a React front-end and a supabase backend. Without an account, users can view the leaderboard. With an account, users are able to view the leaderboard and add to their activity logs. This is an upgraded version of a previous app; this project makes use of TypeScript and uses a Supabase backend with a PostgreSQL database."
+        dialogDescription: "This is a full stack project with a React front-end and a Supabase backend. Without an account, users can view the leaderboard. With an account, users are able to view the leaderboard and add to their activity logs. This is an upgraded version of a previous app; this project makes use of TypeScript and uses a PostgreSQL database.",
+        additionalInfo: <div id="mvmt-tracker-additional-info">(See the source code the deprecated version of the app <a href="https://github.com/ecamartins/ActivityApp">here</a>)</div>
     },
     {
         title: "Courpass",
@@ -22,7 +23,7 @@ const projectInfo: ProjectCardProps[] = [
         chipLabels: ["Python", "Django"],
         projectLink: "",
         sourceCodeLink: "",
-        dialogDescription: "This web-app allows users to enter a list of courses and a list of prerequisite courses. The app will display a table regarding indicating if the searched courses are prerequisites or not. This project is a partner-based project and currently still under development."
+        dialogDescription: "This web-app allows users to enter a list of courses and a list of prerequisite courses. The app will displays a table indicating if the searched courses are prerequisites or not. This project is a partner-based project and currently still under development."
     },
 
     {
@@ -44,11 +45,13 @@ const projectInfo: ProjectCardProps[] = [
 
 ]
 
+const pageDescription = "Please note that due to academic rules, I am unable to display coursework on this site or keep it in a public GitHub repo. I have coding assignments and/or projects written in Python, Java, C, and AVR Assembly as well as my source code for my React web-apps that I would be happy to show you privately."
+
 export const Projects: React.FC<ProjectsProps> = React.memo(({ show }) => {
     if (!show) return <></>;
 
     const projectCards = useMemo(() => {
-        return projectInfo.map(project => <ProjectCard title={project.title} description={project.description} chipLabels={project.chipLabels} dialogDescription={project.dialogDescription} sourceCodeLink={project.sourceCodeLink} projectLink={project.projectLink} />)
+        return projectInfo.map(project => <ProjectCard title={project.title} description={project.description} chipLabels={project.chipLabels} dialogDescription={project.dialogDescription} sourceCodeLink={project.sourceCodeLink} projectLink={project.projectLink} additionalInfo={project.additionalInfo} />)
     }, []);
 
     return (
@@ -56,6 +59,9 @@ export const Projects: React.FC<ProjectsProps> = React.memo(({ show }) => {
             <Typography variant="h4" component="div" sx={{ color: "primary.contrastText", textAlign: "center", marginBottom: "8px" }}>
                 Projects
             </Typography>
+            <div className="project-page-description">
+                {pageDescription}
+            </div>
             <div className="project-cards">
                 {projectCards}
             </div>

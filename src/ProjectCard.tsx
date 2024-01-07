@@ -11,7 +11,7 @@ export interface ProjectCardProps extends ProjectCardDialogInfo {
 }
 
 
-export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, chipLabels, dialogDescription, sourceCodeLink, projectLink }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, chipLabels, dialogDescription, sourceCodeLink, projectLink, additionalInfo }) => {
     const [openDialog, setOpenDialog] = useState<boolean>(false);
 
     const chips = useMemo(() => {
@@ -34,7 +34,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, desc
                     <InfoIcon fontSize="large" sx={{ color: "primary.main", "&:hover": { color: "primary.contrastText" }, cursor: "pointer" }} onClick={() => setOpenDialog(true)} />
                 </div>
             </div>
-            <ProjectCardDialog open={openDialog} onCloseClick={() => setOpenDialog(false)} title={title} dialogDescription={dialogDescription} sourceCodeLink={sourceCodeLink} projectLink={projectLink} />
+            <ProjectCardDialog open={openDialog} onCloseClick={() => setOpenDialog(false)} title={title} dialogDescription={dialogDescription} sourceCodeLink={sourceCodeLink} projectLink={projectLink} additionalInfo={additionalInfo} />
 
         </>);
 })

@@ -7,7 +7,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
 import { iconLinkStyles } from './utils/interfaces';
-import { Tooltip } from '@mui/material';
+import { Tooltip, Typography } from '@mui/material';
 
 interface ProjectCardDialogProps extends ProjectCardDialogInfo {
     open: boolean;
@@ -20,10 +20,11 @@ export interface ProjectCardDialogInfo {
     dialogDescription: string;
     sourceCodeLink: string;
     projectLink: string;
+    additionalInfo?: React.ReactNode;
 }
 
 
-export const ProjectCardDialog: React.FC<ProjectCardDialogProps> = React.memo(({ open, onCloseClick, title, dialogDescription, sourceCodeLink, projectLink }) => {
+export const ProjectCardDialog: React.FC<ProjectCardDialogProps> = React.memo(({ open, onCloseClick, title, dialogDescription, sourceCodeLink, projectLink, additionalInfo = null }) => {
 
     return (
         <>
@@ -32,8 +33,10 @@ export const ProjectCardDialog: React.FC<ProjectCardDialogProps> = React.memo(({
                 open={open}
                 fullWidth
             >
-                <DialogTitle sx={{ m: 0, p: 2 }}>
-                    {title}
+                <DialogTitle>
+                    <Typography variant="h5" component="div" sx={{ color: "primary.contrastText" }}>
+                        {title}
+                    </Typography>
                 </DialogTitle>
                 <IconButton
                     aria-label="close"
@@ -48,9 +51,12 @@ export const ProjectCardDialog: React.FC<ProjectCardDialogProps> = React.memo(({
                     <CloseIcon />
                 </IconButton>
                 <DialogContent>
-                    {dialogDescription}
+                    <div className="project-card-dialog-description">
+                        {dialogDescription}
+                        {additionalInfo}
+                    </div>
                     <div className="project-card-dialog-icons-container">
-                        {sourceCodeLink && <Tooltip title="source code" placement="left"><a href={sourceCodeLink} target="_blank"><GitHubIcon fontSize="large" sx={iconLinkStyles} /></a></Tooltip>}
+                        {sourceCodeLink && <Tooltip title="project repo" placement="left"><a href={sourceCodeLink} target="_blank"><GitHubIcon fontSize="large" sx={iconLinkStyles} /></a></Tooltip>}
                         {projectLink && <Tooltip title="project link" placement="right"><a href={projectLink} target="_blank"><LaunchIcon fontSize="large" sx={iconLinkStyles} /></a></Tooltip>}
                     </div>
                 </DialogContent>

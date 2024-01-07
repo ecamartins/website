@@ -25,7 +25,7 @@ export const HomePage: React.FC<HomePageProps> = React.memo(({ show }) => {
                 <div id="home-page-description">BSc Computer Science — 4<sup>th</sup> Year</div>
                 <div className="homepage-resume-section">
                     <span>Resume </span>
-                    <a href=""><LaunchIcon fontSize="small" sx={iconLinkStyles} /></a>
+                    <a href="https://drive.google.com/file/d/1B6Pq23jJ8ii6aoR-S_sCqXoXzDmwHHXp/view" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles} /></a>
                 </div>
                 <div className="homepage-icons-container">
                     <a href="mailto: emilymartins@uvic.ca"><EmailIcon fontSize="large" sx={iconLinkStyles} /></a>

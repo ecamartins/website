@@ -12,7 +12,7 @@ body {
   flex-flow: column;
 
   .content {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 60px);
 
     // PROJECTS PAGE STYLING
     .projects-page-wrapper {
@@ -20,6 +20,12 @@ body {
       display: flex;
       flex-direction: column;
       height: 100%;
+
+      .project-page-description {
+        text-align: center;
+        margin: 4px 0 10px 0;
+        font-size: 18px;
+      }
 
       .project-cards {
         display: flex;
@@ -33,11 +39,9 @@ body {
           align-items: center;
           justify-content: space-around;
           border-radius: 10px;
-          width: 400px;
-          height: 300px;
           margin: 10px;
           padding: 8px;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2);
+          box-shadow: 0 4px 8px 0 #64b5f6;
 
           .project-card-description {
             margin: 4px 0 4px 0;
@@ -114,11 +118,21 @@ body {
   #name-initials {
     display: none;
   }
+
+  .project-card-container {
+    height: 300px;
+    width: 400px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   #name-full {
     display: none;
+  }
+
+  .project-card-container {
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -128,6 +142,15 @@ body {
   align-items: center;
 
   a {
-    margin: 2px;
+    margin: 0 20px 20px 20px;
+  }
+}
+
+.project-card-dialog-description {
+  margin-bottom: 20px;
+
+  #mvmt-tracker-additional-info {
+    font-size: 14px;
+    margin-top: 4px;
   }
 }

@@ -11,11 +11,8 @@ function App() {
   const theme = createTheme({
     palette: {
       primary: {
-        // main: '#E0C2FF',
-        // light: '#F5EBFF',
-        // contrastText: '#47008F',
         main: '#64b5f6',
-        light: '#F5EBFF',
+        light: '#FFFBFF',
         contrastText: '#0d47a1',
       }
     },
