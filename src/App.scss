@@ -66,6 +66,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin: 20px;
 
         #home-page-name {
           font-size: 70px;
@@ -73,7 +74,6 @@ body {
           margin-bottom: 20px;
           display: flex;
           align-items: center;
-
         }
 
         #home-page-description {
@@ -107,5 +107,27 @@ body {
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #name-initials {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #name-full {
+    display: none;
+  }
+}
+
+.project-card-dialog-icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    margin: 2px;
   }
 }

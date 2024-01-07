@@ -1,28 +1,40 @@
 import { Chip, Typography } from "@mui/material";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
+import InfoIcon from '@mui/icons-material/Info';
+import { ProjectCardDialog, ProjectCardDialogInfo } from "./ProjectCardDialog";
 
 
-export interface ProjectCardProps {
+export interface ProjectCardProps extends ProjectCardDialogInfo {
     title: string;
     description: string;
     chipLabels: string[];
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, chipLabels }) => {
+
+export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, chipLabels, dialogDescription, sourceCodeLink, projectLink }) => {
+    const [openDialog, setOpenDialog] = useState<boolean>(false);
+
     const chips = useMemo(() => {
-        return chipLabels.map(label => <Chip label={label} variant="outlined" sx={{ borderColor: "primary.main" }} />)
+        return chipLabels.map(label => <Chip label={label} variant="outlined" sx={{ borderColor: "primary.main", margin: "2px" }} />)
     }, []);
 
     return (
-        <div className="project-card-container">
-            <Typography variant="h6" component="div" sx={{ color: "primary.contrastText" }}>
-                {title}
-            </Typography>
-            <div className="project-card-description">
-                {description}
+        <>
+            <div className="project-card-container">
+                <Typography variant="h5" component="div" sx={{ color: "primary.contrastText" }}>
+                    {title}
+                </Typography>
+                <div className="project-card-description">
+                    {description}
+                </div>
+                <div className="project-card-chips">
+                    {chips}
+                </div>
+                <div className="project-card-icon">
+                    <InfoIcon fontSize="large" sx={{ color: "primary.main", "&:hover": { color: "primary.contrastText" }, cursor: "pointer" }} onClick={() => setOpenDialog(true)} />
+                </div>
             </div>
-            <div className="project-card-chips">
-                {chips}
-            </div>
-        </div>);
+            <ProjectCardDialog open={openDialog} onCloseClick={() => setOpenDialog(false)} title={title} dialogDescription={dialogDescription} sourceCodeLink={sourceCodeLink} projectLink={projectLink} />
+
+        </>);
 })
