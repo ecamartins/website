@@ -5,7 +5,7 @@ import './App.scss'
 import { HomePage } from './HomePage';
 import { NavBar } from './NavBar'
 import { Projects } from './Projects';
-import { AppPageType } from './utils/interfaces';
+import { AppPageType } from './utils/common';
 
 function App() {
   const theme = createTheme({

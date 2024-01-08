@@ -1,17 +1,12 @@
 import React from "react";
-import { iconLinkStyles, PageDetails } from "./utils/interfaces";
+import { iconLinkStyles, PageDetails } from "./utils/common";
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FlareIcon from '@mui/icons-material/Flare';
 import LaunchIcon from '@mui/icons-material/Launch';
 import { Typography } from "@mui/material";
 
-
-
-interface HomePageProps extends PageDetails {
-}
-
-export const HomePage: React.FC<HomePageProps> = React.memo(({ show }) => {
+export const HomePage: React.FC<PageDetails> = React.memo(({ show }) => {
     if (!show) return <></>;
 
     return (
@@ -25,7 +20,7 @@ export const HomePage: React.FC<HomePageProps> = React.memo(({ show }) => {
                 <div id="home-page-description">BSc Computer Science — 4<sup>th</sup> Year</div>
                 <div className="homepage-resume-section">
                     <span>Resume </span>
-                    <a href="https://drive.google.com/file/d/1B6Pq23jJ8ii6aoR-S_sCqXoXzDmwHHXp/view" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles} /></a>
+                    <a href="https://drive.google.com/file/d/1xoL4OiWn82ICy2C8j4Emn_ZWGCYNt3gj/view?usp=sharing" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles} /></a>
                 </div>
                 <div className="homepage-icons-container">
                     <a href="mailto: emilymartins@uvic.ca"><EmailIcon fontSize="large" sx={iconLinkStyles} /></a>

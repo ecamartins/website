@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
-import { iconLinkStyles } from './utils/interfaces';
+import { iconLinkStyles } from './utils/common';
 import { Tooltip, Typography } from '@mui/material';
 
 interface ProjectCardDialogProps extends ProjectCardDialogInfo {
