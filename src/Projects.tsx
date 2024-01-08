@@ -15,7 +15,7 @@ const projectInfo: ProjectCardProps[] = [
         projectLink: "https://physical-activity-tracker.vercel.app/",
         sourceCodeLink: "https://github.com/ecamartins/physical-activity-tracker",
         dialogDescription: "This is a full stack project with a React front-end and a Supabase backend. Without an account, users can view the leaderboard. With an account, users are able to view the leaderboard and add to their activity logs. This is an upgraded version of a previous app; this project makes use of TypeScript and uses a PostgreSQL database.",
-        additionalInfo: <div id="mvmt-tracker-additional-info">(See the source code the deprecated version of the app <a href="https://github.com/ecamartins/ActivityApp" target="_blank">here</a>)</div>
+        additionalInfo: <div id="mvmt-tracker-additional-info">(See source code of the deprecated version of the app <a href="https://github.com/ecamartins/ActivityApp" target="_blank">here</a>)</div>
     },
     {
         title: "Courpass",
@@ -56,7 +56,7 @@ export const Projects: React.FC<ProjectsProps> = React.memo(({ show }) => {
 
     return (
         <div className="projects-page-wrapper">
-            <Typography variant="h4" component="div" sx={{ color: "primary.contrastText", textAlign: "center", marginBottom: "8px" }}>
+            <Typography variant="h4" component="div" sx={{ color: "primary.contrastText", textAlign: "center", marginBottom: "8px", marginTop: "8px" }}>
                 Projects
             </Typography>
             <div className="project-page-description">

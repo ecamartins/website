@@ -12,11 +12,11 @@ body {
   flex-flow: column;
 
   .content {
-    height: calc(100vh - 60px);
+    height: calc(100vh - 70px);
 
     // PROJECTS PAGE STYLING
     .projects-page-wrapper {
-      margin: 50px;
+      margin: 0 50px;
       display: flex;
       flex-direction: column;
       height: 100%;
