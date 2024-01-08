@@ -35,7 +35,7 @@ const projectInfo: ProjectCardProps[] = [
         dialogDescription: "For this project, I created an object-oriented Python program that generates random art. My program exploits Python's Random Module to generate a random number of SVG shapes (i.e. circles, squares, ellipses) where each shape also has random dimensions. Each randomly generated piece of 'art' is one of four flavours: green, pastel, red, or default. The link below will take you to a simple UI made with Python's Streamlit library. The UI is simply a way to easy demonstrate my working project. Due to academic regulations, my source code is on a private repo, but I am happy to show it to you if you contact me."
     },
     {
-        title: "Linear Kinematic Web App",
+        title: "Linear Kinematics Web App",
         description: "Streamlit web-app that enables users to perform analysis of sprinting data obtained with an IMU.",
         chipLabels: ["Python"],
         projectLink: "https://ecamartins-linear-kinematics-streaml-ephe201-lab3-linkin-sezcry.streamlit.app/",

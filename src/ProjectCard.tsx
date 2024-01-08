@@ -21,7 +21,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, desc
     return (
         <>
             <div className="project-card-container">
-                <Typography variant="h5" component="div" sx={{ color: "primary.contrastText" }}>
+                <Typography variant="h5" component="div" sx={{ color: "primary.contrastText", textAlign: "center" }}>
                     {title}
                 </Typography>
                 <div className="project-card-description">
