@@ -20,7 +20,7 @@ export const HomePage: React.FC<PageDetails> = React.memo(({ show }) => {
                 <div id="home-page-description">BSc Computer Science — 4<sup>th</sup> Year</div>
                 <div className="homepage-resume-section">
                     <span>Resume </span>
-                    <a href="https://drive.google.com/file/d/1xoL4OiWn82ICy2C8j4Emn_ZWGCYNt3gj/view?usp=sharing" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles} /></a>
+                    <a href="https://drive.google.com/file/d/1SEU-4aLGxZmMgd_DNmCVngiR2dB9fTbG/view?usp=sharing" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles} /></a>
                 </div>
                 <div className="homepage-icons-container">
                     <a href="mailto: emilymartins@uvic.ca"><EmailIcon fontSize="large" sx={iconLinkStyles} /></a>
