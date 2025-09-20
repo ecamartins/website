@@ -201,9 +201,22 @@ body {
         display: none;
     }
 
+    #occupation-short {
+        display: none;
+    }
+
+
+    #job-description-short {
+        display: none;
+    }
+
     .project-card-container {
         height: 300px;
         width: 400px;
+    }
+
+    .research-chips-section {
+        flex-direction: row;
     }
 }
 
@@ -212,9 +225,25 @@ body {
         display: none;
     }
 
+    #occupation-full {
+        display: none;
+    }
+
+    #job-description-full {
+        display: none;
+    }
+
     .project-card-container {
         width: 300px;
         height: 300px;
+    }
+
+    .research-chips-section {
+        flex-direction: column;
+    }
+
+    #research-interests-title {
+        display: none;
     }
 }
 

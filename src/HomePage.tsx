@@ -26,13 +26,13 @@ export const HomePage: React.FC<PageDetails> = React.memo(({ show }) => {
                 <div id="home-page-name">
                     <Typography component="span" variant="h1" sx={{ color: "primary.light", textAlign: "center" }}><span id="name-full">Emily Martins</span><span id="name-initials">EM</span></Typography>
                 </div>
-                <div id="home-page-description">Software Development Engineer @ AMD</div>
+                <div id="home-page-description"><span id="occupation-full">Software Development Engineer @ AMD</span><span id="occupation-short">SWE @ AMD</span></div>
                 <div className="job-description">
-                    <div>Working on Stream-K in ROCm's Composable Kernel Library </div>
+                    <div><span id="job-description-full">Working on Stream-K in ROCm's Composable Kernel Library</span><span id="job-description-short">Stream-K in ROCm's CK</span></div>
                     <a href="https://github.com/Rocm/composable_kernel" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles("primary.light", "secondary.main")} /></a>
                 </div>
                 <div className="research-interests-section">
-                    <span>Research Interests:</span>
+                    <span id="research-interests-title">Research Interests:</span>
                     <div className="research-chips-section">{chips}</div>
                 </div>
                 <div className="homepage-resume-section">
