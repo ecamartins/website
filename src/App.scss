@@ -12,7 +12,7 @@ body {
     flex-flow: column;
 
     .content {
-        height: calc(100vh - 70px);
+        height: calc(100vh - 64px);
         z-index: 4;
 
         .particle-background {
@@ -68,8 +68,36 @@ body {
 
         .home-page-wrapper {
             display: grid;
-            grid-template-rows: 20% 45% 35%;
+            grid-template-rows: 15% 45% 40%;
             height: 100%;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                url('/landscape.jpg');
+            background-repeat: no-repeat;
+            /* Prevents image from repeating */
+            background-size: cover;
+            /* Scales image to cover the entire background */
+            background-attachment: fixed;
+            /* Keeps image fixed when scrolling */
+            background-position: center bottom;
+
+            .homepage-footer-credit {
+                grid-row-start: 3;
+                grid-row-end: 4;
+
+                position: absolute;
+                bottom: 20px;
+                /* distance from bottom */
+                left: 20px;
+                /* distance from left */
+
+                #footer-text {
+                    font-size: 15px;
+                    color: #FFFFFF;
+                    margin: 0px 0px 20px 15px;
+                }
+            }
 
             .home-page-content {
                 grid-row-start: 2;
@@ -85,24 +113,30 @@ body {
                     margin-bottom: 20px;
                     display: flex;
                     align-items: center;
-                    background-color: #FFFFFF;
+                    background-color: none;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
                 }
 
                 #home-page-description {
-                    font-size: 24px;
-                    background-color: #FFFFFF;
+                    font-size: 30px;
+                    background-color: none;
+                    text-align: center;
+                    color: #FFFFFF;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
                 }
 
                 .homepage-icons-container {
                     display: flex;
                     align-items: center;
-                    background-color: #FFFFFF;
+                    background-color: none;
+                    color: #FFFFFF;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 
                     a {
                         text-decoration: none;
                         cursor: pointer;
                         margin: 0 4px 0 4px;
-                        color: black
+                        color: #FFFFFF;
                     }
                 }
 
@@ -110,12 +144,48 @@ body {
                     display: flex;
                     align-items: center;
                     font-size: 20px;
-                    background-color: #FFFFFF;
+                    background-color: none;
+                    color: #FFFFFF;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 
                     a {
                         text-decoration: none;
                         cursor: pointer;
-                        color: black;
+                        color: #FFFFFF;
+                        margin-top: 8px;
+                        margin-left: 4px;
+                    }
+                }
+
+                .research-interests-section {
+                    color: #FFFFFF;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                    font-size: 20px;
+                    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+
+                    .research-chips-section {
+                        margin-left: 4px;
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+
+                .job-description {
+                    display: flex;
+                    align-items: center;
+                    font-size: 20px;
+                    background-color: none;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    flex-wrap: wrap;
+                    color: #FFFFFF;
+
+                    a {
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: #FFFFFF;
                         margin-top: 8px;
                         margin-left: 4px;
                     }

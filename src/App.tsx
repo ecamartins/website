@@ -4,7 +4,6 @@ import { useState } from 'react';
 import './App.scss'
 import { HomePage } from './HomePage';
 import { NavBar } from './NavBar'
-import ParticlesComponent from './ParticlesBackground';
 import { Projects } from './Projects';
 import { AppPageType } from './utils/common';
 
@@ -13,7 +12,7 @@ function App() {
         palette: {
             primary: {
                 main: '#000000',
-                light: '#FFFBFF',
+                light: '#FFFFF0',
                 contrastText: '#891131',
             }
         },
@@ -28,9 +27,6 @@ function App() {
             <div className="website-wrapper">
                 <NavBar onNavBarClick={(page: AppPageType) => setPage(page)} />
                 <div className="content">
-                    {page == "HOME" && <div className="particle-background">
-                        <ParticlesComponent />
-                    </div>}
                     <HomePage show={page === "HOME"} />
                     <Projects show={page === "PROJECTS"} />
                 </div>
