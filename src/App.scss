@@ -57,6 +57,24 @@ body {
 
                     .project-card-chips {
                         display: flex;
+                        flex-wrap: wrap;
+                        flex-flow: wrap;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .project-card-publication {
+                        display: flex;
+                        align-items: center;
+
+                        .project-card-publication-text {
+                            color: #FF0000;
+                        }
+
+                        a {
+                            text-decoration: none;
+                            cursor: pointer;
+                        }
                     }
                 }
             }

@@ -4,13 +4,13 @@ import { ProjectCard } from "./ProjectCard";
 import { PageDetails } from "./utils/common";
 import { projectInfo } from "./utils/projectData";
 
-const pageDescription = "Please note that due to academic rules, I am unable to display coursework on this site or keep it in a public GitHub repo. I have coding assignments and/or projects written in Python, Java, C, and AVR Assembly as well as my source code for my React web-apps that I would be happy to show you privately."
+const pageDescription = ""
 
 export const Projects: React.FC<PageDetails> = React.memo(({ show }) => {
     if (!show) return <></>;
 
     const projectCards = useMemo(() => {
-        return projectInfo.map(project => <ProjectCard title={project.title} description={project.description} chipLabels={project.chipLabels} dialogDescription={project.dialogDescription} sourceCodeLink={project.sourceCodeLink} projectLink={project.projectLink} additionalInfo={project.additionalInfo} />)
+        return projectInfo.map(project => <ProjectCard title={project.title} description={project.description} chipLabels={project.chipLabels} publicationInfo={project.publicationInfo} dialogDescription={project.dialogDescription} sourceCodeLink={project.sourceCodeLink} projectLink={project.projectLink} additionalInfo={project.additionalInfo} projectToolTip={project.projectToolTip} />)
     }, []);
 
     return (

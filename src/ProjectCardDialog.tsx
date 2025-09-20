@@ -21,10 +21,11 @@ export interface ProjectCardDialogInfo {
     sourceCodeLink: string;
     projectLink: string;
     additionalInfo?: React.ReactNode;
+    projectToolTip?: string;
 }
 
 
-export const ProjectCardDialog: React.FC<ProjectCardDialogProps> = React.memo(({ open, onCloseClick, title, dialogDescription, sourceCodeLink, projectLink, additionalInfo = null }) => {
+export const ProjectCardDialog: React.FC<ProjectCardDialogProps> = React.memo(({ open, onCloseClick, title, dialogDescription, sourceCodeLink, projectLink, additionalInfo = null, projectToolTip = "project link" }) => {
 
     return (
         <>
@@ -57,7 +58,7 @@ export const ProjectCardDialog: React.FC<ProjectCardDialogProps> = React.memo(({
                     </div>
                     <div className="project-card-dialog-icons-container">
                         {sourceCodeLink && <Tooltip title="project repo" placement="left"><a href={sourceCodeLink} target="_blank"><GitHubIcon fontSize="large" sx={iconLinkStyles("primary.main", "secondary.main")} /></a></Tooltip>}
-                        {projectLink && <Tooltip title="project link" placement="right"><a href={projectLink} target="_blank"><LaunchIcon fontSize="large" sx={iconLinkStyles("primary.main", "secondary.main")} /></a></Tooltip>}
+                        {projectLink && <Tooltip title={projectToolTip} placement="right"><a href={projectLink} target="_blank"><LaunchIcon fontSize="large" sx={iconLinkStyles("primary.main", "secondary.main")} /></a></Tooltip>}
                     </div>
                 </DialogContent>
             </Dialog>

@@ -2,16 +2,24 @@ import { Chip, Typography } from "@mui/material";
 import React, { useMemo, useState } from "react";
 import InfoIcon from '@mui/icons-material/Info';
 import { ProjectCardDialog, ProjectCardDialogInfo } from "./ProjectCardDialog";
+import { iconLinkStyles } from "./utils/common";
+import LaunchIcon from '@mui/icons-material/Launch';
 
 
 export interface ProjectCardProps extends ProjectCardDialogInfo {
     title: string;
     description: string;
     chipLabels: string[];
+    publicationInfo?: ProjectCardPublicationInfo;
+}
+
+export interface ProjectCardPublicationInfo {
+    title: string;
+    url: string;
 }
 
 
-export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, chipLabels, dialogDescription, sourceCodeLink, projectLink, additionalInfo }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, description, chipLabels, publicationInfo, dialogDescription, sourceCodeLink, projectLink, additionalInfo, projectToolTip }) => {
     const [openDialog, setOpenDialog] = useState<boolean>(false);
 
     const chips = useMemo(() => {
@@ -30,11 +38,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, desc
                 <div className="project-card-chips">
                     {chips}
                 </div>
+                {publicationInfo &&
+                    <div className="project-card-publication">
+                        <span className="project-card-publication-text">{publicationInfo.title}</span>
+                        <a href={publicationInfo.url} target="_blank"><LaunchIcon fontSize="small" sx={{ paddingLeft: "4px", paddingTop: "2px", ...iconLinkStyles("#FF0000", "#B22222") }} /></a>
+                    </div>
+                }
                 <div className="project-card-icon">
                     <InfoIcon fontSize="large" sx={{ color: "primary.main", "&:hover": { color: "secondary.main" }, cursor: "pointer" }} onClick={() => setOpenDialog(true)} />
                 </div>
-            </div>
-            <ProjectCardDialog open={openDialog} onCloseClick={() => setOpenDialog(false)} title={title} dialogDescription={dialogDescription} sourceCodeLink={sourceCodeLink} projectLink={projectLink} additionalInfo={additionalInfo} />
+            </div >
+            <ProjectCardDialog open={openDialog} onCloseClick={() => setOpenDialog(false)} title={title} dialogDescription={dialogDescription} sourceCodeLink={sourceCodeLink} projectLink={projectLink} additionalInfo={additionalInfo} projectToolTip={projectToolTip} />
 
         </>);
 })
