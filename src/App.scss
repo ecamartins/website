@@ -82,6 +82,31 @@ body {
 
         }
 
+        // BIO PAGE STYLING
+
+        .bio-page-wrapper {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .big-page-image {
+                margin-top: 10px;
+                margin-bottom: 20px;
+                width: 225px;
+                height: 225px;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: 35% center
+            }
+
+            .bio-page-description {
+                margin-left: 15%;
+                margin-right: 15%;
+                margin-bottom: 20px;
+            }
+        }
+
         // HOME PAGE STYLING
 
         .home-page-wrapper {

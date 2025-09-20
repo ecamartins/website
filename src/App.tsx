@@ -6,6 +6,7 @@ import { HomePage } from './HomePage';
 import { NavBar } from './NavBar'
 import { Projects } from './Projects';
 import { AppPageType } from './utils/common';
+import { Biography } from './Biography';
 
 function App() {
     const theme = createTheme({
@@ -31,6 +32,7 @@ function App() {
                 <NavBar onNavBarClick={(page: AppPageType) => setPage(page)} />
                 <div className="content">
                     <HomePage show={page === "HOME"} />
+                    <Biography show={page == "BIO"} />
                     <Projects show={page === "PROJECTS"} />
                 </div>
             </div>
