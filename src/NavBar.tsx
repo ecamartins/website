@@ -7,7 +7,7 @@ interface NavBarProps {
     onNavBarClick: (page: AppPageType) => void;
 }
 
-const navBarStyles = { color: "primary.light", cursor: "pointer", "&:hover": { textDecoration: "underline" } };
+const navBarStyles = { color: "primary.light", cursor: "pointer", "&:hover": { textDecoration: "none", color: "secondary.main" } };
 
 export const NavBar: React.FC<NavBarProps> = React.memo(({ onNavBarClick }) => {
 
