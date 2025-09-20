@@ -29,7 +29,7 @@ export const HomePage: React.FC<PageDetails> = React.memo(({ show }) => {
                 <div id="home-page-description">Software Development Engineer @ AMD</div>
                 <div className="job-description">
                     <div>Working on Stream-K in ROCm's Composable Kernel Library </div>
-                    <a href="https://github.com/Rocm/composable_kernel" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles("primary.light")} /></a>
+                    <a href="https://github.com/Rocm/composable_kernel" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles("primary.light", "secondary.main")} /></a>
                 </div>
                 <div className="research-interests-section">
                     <span>Research Interests:</span>
@@ -37,12 +37,12 @@ export const HomePage: React.FC<PageDetails> = React.memo(({ show }) => {
                 </div>
                 <div className="homepage-resume-section">
                     <span>Resume </span>
-                    <a href="https://drive.google.com/file/d/1SEU-4aLGxZmMgd_DNmCVngiR2dB9fTbG/view?usp=sharing" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles("primary.light")} /></a>
+                    <a href="https://drive.google.com/file/d/1SEU-4aLGxZmMgd_DNmCVngiR2dB9fTbG/view?usp=sharing" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles("primary.light", "secondary.main")} /></a>
                 </div>
                 <div className="homepage-icons-container">
-                    <a href="mailto: ecamartins@gmail.com"><EmailIcon fontSize="large" sx={iconLinkStyles("primary.light")} /></a>
-                    <a href="https://github.com/ecamartins" target="_blank"><GitHubIcon fontSize="large" sx={iconLinkStyles("primary.light")} /></a>
-                    <a href="https://linkedin.com/in/emily-martins-a36a10299" target="_blank"><LinkedInIcon fontSize="large" sx={iconLinkStyles("primary.light")} /></a>
+                    <a href="mailto: ecamartins@gmail.com"><EmailIcon fontSize="large" sx={iconLinkStyles("primary.light", "secondary.main")} /></a>
+                    <a href="https://github.com/ecamartins" target="_blank"><GitHubIcon fontSize="large" sx={iconLinkStyles("primary.light", "secondary.main")} /></a>
+                    <a href="https://linkedin.com/in/emily-martins-a36a10299" target="_blank"><LinkedInIcon fontSize="large" sx={iconLinkStyles("primary.light", "secondary.main")} /></a>
                 </div>
             </div>
             <div className="homepage-footer-credit">

@@ -45,7 +45,7 @@ export const ProjectCardDialog: React.FC<ProjectCardDialogProps> = React.memo(({
                         position: 'absolute',
                         right: 8,
                         top: 8,
-                        ...iconLinkStyles("primary.main")
+                        ...iconLinkStyles("primary.main", "secondary.main")
                     }}
                 >
                     <CloseIcon />
@@ -56,8 +56,8 @@ export const ProjectCardDialog: React.FC<ProjectCardDialogProps> = React.memo(({
                         {additionalInfo}
                     </div>
                     <div className="project-card-dialog-icons-container">
-                        {sourceCodeLink && <Tooltip title="project repo" placement="left"><a href={sourceCodeLink} target="_blank"><GitHubIcon fontSize="large" sx={iconLinkStyles("primary.main")} /></a></Tooltip>}
-                        {projectLink && <Tooltip title="project link" placement="right"><a href={projectLink} target="_blank"><LaunchIcon fontSize="large" sx={iconLinkStyles("primary.main")} /></a></Tooltip>}
+                        {sourceCodeLink && <Tooltip title="project repo" placement="left"><a href={sourceCodeLink} target="_blank"><GitHubIcon fontSize="large" sx={iconLinkStyles("primary.main", "secondary.main")} /></a></Tooltip>}
+                        {projectLink && <Tooltip title="project link" placement="right"><a href={projectLink} target="_blank"><LaunchIcon fontSize="large" sx={iconLinkStyles("primary.main", "secondary.main")} /></a></Tooltip>}
                     </div>
                 </DialogContent>
             </Dialog>

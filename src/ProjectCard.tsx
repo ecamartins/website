@@ -15,7 +15,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, desc
     const [openDialog, setOpenDialog] = useState<boolean>(false);
 
     const chips = useMemo(() => {
-        return chipLabels.map(label => <Chip label={label} variant="outlined" sx={{ borderColor: "primary.main", margin: "2px" }} />)
+        return chipLabels.map(label => <Chip label={label} variant="outlined" sx={{ borderColor: "primary.contrastText", color: "primary.contrastText", margin: "2px", borderWidth: 1.5 }} />)
     }, []);
 
     return (
@@ -31,7 +31,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, desc
                     {chips}
                 </div>
                 <div className="project-card-icon">
-                    <InfoIcon fontSize="large" sx={{ color: "primary.main", "&:hover": { color: "primary.contrastText" }, cursor: "pointer" }} onClick={() => setOpenDialog(true)} />
+                    <InfoIcon fontSize="large" sx={{ color: "primary.main", "&:hover": { color: "secondary.main" }, cursor: "pointer" }} onClick={() => setOpenDialog(true)} />
                 </div>
             </div>
             <ProjectCardDialog open={openDialog} onCloseClick={() => setOpenDialog(false)} title={title} dialogDescription={dialogDescription} sourceCodeLink={sourceCodeLink} projectLink={projectLink} additionalInfo={additionalInfo} />

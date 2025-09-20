@@ -4,9 +4,9 @@ export interface PageDetails {
 
 export type AppPageType = "PROJECTS" | "HOME";
 
-export const iconLinkStyles = (color: string) => ({
+export const iconLinkStyles = (color: string, contrastText: string = "primary.contrastText") => ({
     color: color,
     "&:hover": {
-        color: "primary.contrastText",
+        color: contrastText,
     },
 });

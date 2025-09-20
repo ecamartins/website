@@ -13,7 +13,10 @@ function App() {
             primary: {
                 main: '#000000',
                 light: '#FFFFF0',
-                contrastText: '#891131',
+                contrastText: '#0054A4',
+            },
+            secondary: {
+                main: '#027ff5',
             }
         },
         typography: {
