@@ -36,8 +36,8 @@ export const HomePage: React.FC<PageDetails> = React.memo(({ show }) => {
                     <div className="research-chips-section">{chips}</div>
                 </div>
                 <div className="homepage-resume-section">
-                    <span>Resume </span>
-                    <a href="https://drive.google.com/file/d/1SEU-4aLGxZmMgd_DNmCVngiR2dB9fTbG/view?usp=sharing" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles("primary.light", "secondary.main")} /></a>
+                    <span>CV </span>
+                    <a href="https://drive.google.com/file/d/172wn3GShuN7N03qjsg1Sd83E4nLXZMT8/view?usp=drive_link" target="_blank"><LaunchIcon fontSize="small" sx={iconLinkStyles("primary.light", "secondary.main")} /></a>
                 </div>
                 <div className="homepage-icons-container">
                     <a href="mailto: ecamartins@gmail.com"><EmailIcon fontSize="large" sx={iconLinkStyles("primary.light", "secondary.main")} /></a>

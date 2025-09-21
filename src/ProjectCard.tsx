@@ -1,4 +1,4 @@
-import { Chip, Typography } from "@mui/material";
+import { Chip, Tooltip, Typography } from "@mui/material";
 import React, { useMemo, useState } from "react";
 import InfoIcon from '@mui/icons-material/Info';
 import { ProjectCardDialog, ProjectCardDialogInfo } from "./ProjectCardDialog";
@@ -45,7 +45,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, desc
                     </div>
                 }
                 <div className="project-card-icon">
-                    <InfoIcon fontSize="large" sx={{ color: "primary.main", "&:hover": { color: "secondary.main" }, cursor: "pointer" }} onClick={() => setOpenDialog(true)} />
+                    <Tooltip title="project info" placement="right"><InfoIcon fontSize="large" sx={{ color: "primary.main", "&:hover": { color: "secondary.main" }, cursor: "pointer" }} onClick={() => setOpenDialog(true)} /></Tooltip>
                 </div>
             </div >
             <ProjectCardDialog open={openDialog} onCloseClick={() => setOpenDialog(false)} title={title} dialogDescription={dialogDescription} sourceCodeLink={sourceCodeLink} projectLink={projectLink} additionalInfo={additionalInfo} projectToolTip={projectToolTip} />

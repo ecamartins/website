@@ -12,7 +12,7 @@ export const Biography: React.FC<PageDetails> = React.memo(({ show }) => {
             <Typography variant="h4" component="div" sx={{ color: "primary.contrastText", textAlign: "center", marginBottom: "8px", marginTop: "8px" }}>
                 Biography
             </Typography>
-            <img className="big-page-image" src="/bio_photo.jpg" alt="Profile" />
+            <img className="bio-page-image" src="/bio_photo.jpg" alt="Profile" />
             <div className="bio-page-description">
                 {bioText}
             </div>

@@ -7,20 +7,29 @@ export const projectInfo: ProjectCardProps[] = [
     {
         title: "Bipartite GEMM",
         description: "Mixed precision GPU GEMM implementations using Tensor cores and CUDA cores.",
-        chipLabels: ["C++", "CUDA", "Tensor Cores", "Mixed Precision", "CUDA Cores", "Warp Primitives"],
+        chipLabels: ["C++", "CUDA", "GEMM", "GPU", "Mixed Precision", "Warp Primitives", "CUDA Streams"],
         projectLink: "",
         sourceCodeLink: "https://github.com/TeamBipartite/bipartite-gemm",
-        dialogDescription: "TODO"
+        dialogDescription: "This team project includes several GEMM implementations implemented on an NVIDIA T4 GPU. Our CUDA core implementation consists of a Split-K GEMM using a 3D grid and atomics; we organize data in shared memory to reduce bank conflicts and use warp-primitives to compute dot products. For our tensor core implementation, we use the WMMA API to implement our algorithm; we make use of templates to support INT8, FP16, and  FP32 precisions. We also make use of CUDA streams to hide memory transfer latencies and pinned memory to speed up transfers between the host and device."
     },
     {
         title: "SCOOP",
-        description: "Research project funded by NSERC USRA and NSERC CREATE developing unconstrained \"twins\" of constrained NP-complete problems and corresponding QUBOs.",
+        description: "Research project funded by NSERC USRA and NSERC CREATE developing unconstrained variants of constrained NP-complete problems and corresponding QUBOs.",
         chipLabels: ["QUBOs", "NP-Completeness", "Complexity Theory", "Quantum Computing"],
-        publicationInfo: { title: "Accepted at QCE2025!", url: "https://arxiv.org/pdf/2504.10897" },
+        publicationInfo: { title: "Paper accepted at QCE2025!", url: "https://arxiv.org/pdf/2504.10897" },
         projectLink: "https://arxiv.org/pdf/2504.10897",
         sourceCodeLink: "",
         projectToolTip: "publication link",
-        dialogDescription: "TODO"
+        dialogDescription: "This research project, funded by NSERC USRA and NSERC CREATE, was done in collaboration with Dr. Ulrike Stege (supervisor) and a PhD student. It involved both complexity theory and quantum computing. I developed unconstrained versions of common NP-complete graph and set problems; we termed the unconstrained and constrained problem pairs \"twins.\" I proved each unconstrained twin was NP-complete and proved that some were in FPT. Additionally, I also developed Quadratic or Higher-order Unconstrained Binary Optimization problems (QUBOs and HUBOs) for each unconstrained problem. For constrained problems, QUBOs and HUBOs often contain penalty parameters to enforce problem-constraints; optimal penalty parameters can vary for different instances of the same problem. That said, QUBOs for unconstrained problems do not require penalty terms. Since the unconstrained variants are NP-complete, solutions to the unconstrained problems can be converted to solutions to the constrained counterpart in polynomial time. Thus, one could use Quantum Approximate Optimization Algorithm on our unconstrained variants to avoid the need for penalty parameters. See our publication for more details."
+    },
+    {
+        title: "CUDA Core Accelerated Binary Search",
+        description: "Massively parallel partitioning-based binary search on the GPU. (Honours thesis)",
+        chipLabels: ["C++", "CUDA", "Gathers and Scatters", "GPU"],
+        projectLink: "https://drive.google.com/file/d/11tBPk2lwiNV90wr6WCW1N3hw8qrjx09e/view?usp=sharing",
+        projectToolTip: "report link",
+        sourceCodeLink: "",
+        dialogDescription: "For my undergraduate Honours thesis, supervised by Dr. Sean Chester, I implemented a massively parallel binary search on the GPU. As described in my report (see link below), I went through several iterations involving several tree layouts, including a hybrid binary search tree layout and van Emde's Boas layout. That said, the van Emde's Boas layout required lots of bookkeeping and led to register pressure which resulted in low occupancy. To overcome these limitations, I developed a different approach: a partitioning-based binary search approach involving 3 stages. First, elements find the partition (or bucket) in the dataset to which they belong; then, a mapping is created using a gather and scatter approach to map lookup keys to the dataset and vice versa. Finally, a reverse search is done such that a partition of the dataset searches in exactly one partition of the lookup keys. The partition size is selected such that it fits in shared memory. This final partitioning approach is optimized for memory coalescing, scales as the input size increases (since the partition size remains fixed), and can be tuned for different GPU architectures."
     },
     {
         title: "Multi-client Web Server",
@@ -28,7 +37,7 @@ export const projectInfo: ProjectCardProps[] = [
         chipLabels: ["QUIC-like protocol", "HTTP requests", "Python"],
         projectLink: "",
         sourceCodeLink: "https://gitfront.io/r/ecamartins/BtLkUYHXD4sE/multiclient-web-server/",
-        dialogDescription: "TODO"
+        dialogDescription: "In this project, I implemented a multi-client web server using socket programming in Python. I implemented a QUIC-like reliable transport protocol on top of UDP. Additionally, I implemented both a client and server application layer using an object-oriented design. Clients can make pipelined HTTP GET requests to the server."
     },
     {
         title: "MvmtTracker",

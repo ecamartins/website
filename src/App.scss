@@ -90,14 +90,15 @@ body {
             flex-direction: column;
             align-items: center;
 
-            .big-page-image {
+            .bio-page-image {
                 margin-top: 10px;
                 margin-bottom: 20px;
                 width: 225px;
                 height: 225px;
-                border-radius: 50%;
+                aspect-ratio: 1 / 1;
                 object-fit: cover;
-                object-position: 35% center
+                object-position: 35% center;
+                clip-path: circle(50% at 50% 50%);
             }
 
             .bio-page-description {
