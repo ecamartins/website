@@ -15,7 +15,7 @@ export const Projects: React.FC<PageDetails> = React.memo(({ show }) => {
 
     return (
         <div className="projects-page-wrapper">
-            <Typography variant="h4" component="div" sx={{ color: "primary.contrastText", textAlign: "center", marginBottom: "8px", marginTop: "8px" }}>
+            <Typography variant="h4" component="div" sx={{ color: "primary.light", textAlign: "center", marginBottom: "8px", marginTop: "8px", textShadow: "1px 1px 3px rgba(0, 0, 0, 0.6)" }}>
                 Projects
             </Typography>
             <div className="project-page-description">

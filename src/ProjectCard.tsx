@@ -41,7 +41,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ title, desc
                 {publicationInfo &&
                     <div className="project-card-publication">
                         <span className="project-card-publication-text">{publicationInfo.title}</span>
-                        <a href={publicationInfo.url} target="_blank"><LaunchIcon fontSize="small" sx={{ paddingLeft: "4px", paddingTop: "2px", ...iconLinkStyles("#FF0000", "#B22222") }} /></a>
+                        <a href={publicationInfo.url} target="_blank"><LaunchIcon fontSize="small" sx={{ paddingLeft: "4px", paddingTop: "2px", ...iconLinkStyles("primary.contrastText", "secondary.main") }} /></a>
                     </div>
                 }
                 <div className="project-card-icon">
